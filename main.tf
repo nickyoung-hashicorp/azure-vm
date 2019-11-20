@@ -4,16 +4,7 @@ terraform {
 
 variable "location" {
   description = "Azure location in which to create resources"
-  default = "East US"
-}
-
-variable "windows_dns_prefix" {
-  description = "DNS prefix to add to to public IP address for Windows VM"
-}
-
-variable "admin_password" {
-  description = "admin password for Windows VM"
-  default = "pTFE1234!"
+  default = "West US"
 }
 
 module "windowsserver" {
@@ -21,7 +12,7 @@ module "windowsserver" {
   version             = "1.1.5"
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rc"
-  vm_hostname         = "pwc-ptfe"
+  vm_hostname         = "nyoung-tfc-azure-demo"
   admin_password      = "${var.admin_password}"
   vm_os_simple        = "WindowsServer"
   public_ip_dns       = ["${var.windows_dns_prefix}"]
