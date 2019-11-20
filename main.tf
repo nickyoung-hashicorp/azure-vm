@@ -2,14 +2,9 @@ terraform {
   required_version = ">= 0.11.1"
 }
 
-variable "location" {
-  description = "Azure location in which to create resources"
-  default = "West US"
-}
-
 module "windowsserver" {
   source              = "Azure/compute/azurerm"
-  version             = "1.1.5"
+  version             = "1.27"
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rc"
   vm_hostname         = "nyoung-tfc-azure-demo"
@@ -21,7 +16,7 @@ module "windowsserver" {
 
 module "network" {
   source              = "Azure/network/azurerm"
-  version             = "1.1.1"
+  version             = "2.0.0"
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rc"
   allow_ssh_traffic   = true
