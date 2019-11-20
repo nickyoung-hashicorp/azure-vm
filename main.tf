@@ -16,7 +16,7 @@ module "windowsserver" {
 
 module "network" {
   source              = "Azure/network/azurerm"
-  version             = "2.0.0"
+  version             = "1.3.0"
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rc"
   allow_ssh_traffic   = true
