@@ -20,7 +20,7 @@ module "windowsserver" {
   version             = "1.1.5"
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rg"
-  vm_hostname         = "{var.windows_dns_prefix}-azure-vm"
+  vm_hostname         = "azure-vm"
   admin_password      = "${var.admin_password}"
   vm_os_simple        = "WindowsServer"
   public_ip_dns       = ["${var.windows_dns_prefix}"]
