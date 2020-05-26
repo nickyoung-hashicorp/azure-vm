@@ -36,9 +36,9 @@ module "network" {
   location            = "${var.location}"
   resource_group_name = "${var.windows_dns_prefix}-rg"
   allow_ssh_traffic   = true
-  tags = {
-    environment = "demo"
-  }
+#   tags = {
+#     environment = "demo"
+#   }
 }
 
 output "windows_vm_public_name"{
