@@ -26,7 +26,7 @@ module "windowsserver" {
   public_ip_dns       = ["${var.windows_dns_prefix}"]
   vnet_subnet_id      = "${module.network.vnet_subnets[0]}"
 #   tags = {
-#     environment = "demo"
+#     environment = "devops"
 #   }
 }
 
